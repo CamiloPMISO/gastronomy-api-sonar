@@ -95,6 +95,6 @@ export class RestaurantGastronomyService {
       if (!restaurantGastronomy)
         throw new BusinessLogicException("The gastronomy with the given id is not associated to the restaurant", BusinessError.PRECONDITION_FAILED)
  
-      return restaurant;
+        return restaurant;
   }
 }

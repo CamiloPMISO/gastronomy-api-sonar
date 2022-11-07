@@ -32,7 +32,7 @@ export class RecipeResolver {
     }
 
     @Mutation(() => String)
-    deleteRecipe(@Args('id') id: string) {
+    async deleteRecipe(@Args('id') id: string) : Promise<String>{
         this.recipeService.delete(id);
         return id;
     }

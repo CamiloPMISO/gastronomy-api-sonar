@@ -74,11 +74,11 @@ export class GastronomyRestaurantService {
         if (!gastronomy)
           throw new BusinessLogicException("The gastronomy with the given id was not found", BusinessError.NOT_FOUND)
     
-        for (let i = 0; i < restaurants.length; i++) {
-          const restaurant: RestaurantEntity = await this.restaurantRepository.findOne({where: {id: restaurants[i].id}});
-          if (!restaurant)
-            throw new BusinessLogicException("The restaurant with the given id was not found", BusinessError.NOT_FOUND)
-        }
+          for (let i = 0; i < restaurants.length; i++) {
+            const restaurant: RestaurantEntity = await this.restaurantRepository.findOne({where: {id: restaurants[i].id}});
+            if (!restaurant)
+              throw new BusinessLogicException("The restaurant with the given id was not found", BusinessError.NOT_FOUND)
+          }
     
         gastronomy.restaurants = restaurants;
         return await this.gastronomyRepository.save(gastronomy);
@@ -122,7 +122,7 @@ export class GastronomyRestaurantService {
       if (!gastronomyRestaurant)
         throw new BusinessLogicException("The restaurant with the given id is not associated to the gastronomy", BusinessError.PRECONDITION_FAILED)
  
-      return gastronomy;
+        return gastronomy;
   }
 
 }

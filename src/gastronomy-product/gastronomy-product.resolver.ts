@@ -1,4 +1,4 @@
-import { Args, Mutation, Query, Resolver } from "@nestjs/graphql";
+import { Args, Mutation, Query, Resolver, ArgsType } from "@nestjs/graphql";
 import { GastronomyProductService } from "./gastronomy-product.service";
 import { ProductEntity } from "../products/product.entity";
 import { GastronomyEntity } from "../gastronomy/gastronomy.entity";
@@ -32,7 +32,7 @@ export class GastronomyProductResolver {
   }
 
   @Mutation(() => String)
-  async deleteGastronomyProduct(@Args("gastronomyId") gastronomyId: string, @Args("productId") productId: string): Promise<string> {
+  async deleteGastronomyProduct(@Args("gastronomyId") gastronomyId: string, @Args("productId") productId: string): Promise<String> {
     await this.gastronomyProductService.deleteProduct(gastronomyId, productId);
     return productId;
   }

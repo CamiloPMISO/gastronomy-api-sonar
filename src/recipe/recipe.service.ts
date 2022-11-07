@@ -41,7 +41,7 @@ export class RecipeService {
         if (!recipe)
           throw new BusinessLogicException("The recipe with the given id was not found", BusinessError.NOT_FOUND);
    
-        return recipe;
+          return recipe;
     }
 
     async create(recipe: RecipeEntity): Promise<RecipeEntity> {
@@ -63,7 +63,7 @@ export class RecipeService {
         if (!recipe)
           throw new BusinessLogicException("The recipe with the given id was not found", BusinessError.NOT_FOUND);
      
-        await this.recipeRepository.remove(recipe);
+          await this.recipeRepository.remove(recipe);
     }
 
 }

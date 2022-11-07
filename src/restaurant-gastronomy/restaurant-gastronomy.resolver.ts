@@ -31,7 +31,7 @@ export class RestaurantGastronomyResolver {
     }
 
     @Mutation(() => String)
-    async deleteGastronomyoOfRestaurant(@Args('restaurantId') restaurantId: string, @Args('gastronomyId') gastronomyId: string): Promise<string> {
+    async deleteGastronomyoOfRestaurant(@Args('restaurantId') restaurantId: string, @Args('gastronomyId') gastronomyId: string): Promise<String> {
         await this.restaurantGastronomyService.deleteGastronomyOfRestaurant(restaurantId, gastronomyId);
         return gastronomyId;
     }
