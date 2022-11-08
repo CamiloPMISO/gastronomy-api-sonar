@@ -29,8 +29,8 @@ export class RestaurantGastronomyService {
         if (!restaurant)
           throw new BusinessLogicException("The restaurant with the given id was not found", BusinessError.NOT_FOUND);
 
-        restaurant.gastronomies = [...restaurant.gastronomies, gastronomy];
-        return await this.restaurantRepository.save(restaurant);
+          restaurant.gastronomies = [...restaurant.gastronomies, gastronomy];
+          return await this.restaurantRepository.save(restaurant);
     }
 
     async findGastronomyByRestaurantIdGastronomyId(restaurantId: string, gastronomyId: string): Promise<GastronomyEntity> {
@@ -48,8 +48,8 @@ export class RestaurantGastronomyService {
           )
         if (!restaurant)
           throw new BusinessLogicException("The restaurant with the given id was not found", BusinessError.NOT_FOUND);
-        await this.cacheManager.set<RestaurantEntity>(restaurantId, restaurant);
-        return restaurant.gastronomies;
+          await this.cacheManager.set<RestaurantEntity>(restaurantId, restaurant);
+          return restaurant.gastronomies;
     }
       return cached.gastronomies;
   }
@@ -90,7 +90,7 @@ export class RestaurantGastronomyService {
         if (!restaurant)
           throw new BusinessLogicException("The restaurant with the given id was not found", BusinessError.NOT_FOUND);
  
-      const restaurantGastronomy: GastronomyEntity = restaurant.gastronomies.find(r => r.id === gastronomy.id);
+          const restaurantGastronomy: GastronomyEntity = restaurant.gastronomies.find(r => r.id === gastronomy.id);
  
       if (!restaurantGastronomy)
         throw new BusinessLogicException("The gastronomy with the given id is not associated to the restaurant", BusinessError.PRECONDITION_FAILED)
