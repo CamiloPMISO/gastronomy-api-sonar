@@ -40,6 +40,7 @@ describe('GastronomyRestaurantService', () => {
     gastronomyRepository.clear();
     restaurantRepository.clear();
     restaurantsList = [];
+    
     for(let i = 0; i < 5; i++){
         const restaurant: RestaurantEntity = await restaurantRepository.save({
           name: faker.name.fullName(),
