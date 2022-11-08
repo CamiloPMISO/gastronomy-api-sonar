@@ -2,7 +2,7 @@
 /* archivo: src/recipe/recipe.entity.ts */
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { GastronomyEntity } from './../gastronomy/gastronomy.entity';
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType, Mutation } from '@nestjs/graphql';
 
 @ObjectType()
 @Entity()
